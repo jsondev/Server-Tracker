@@ -8,6 +8,7 @@ import { ServerAddComponent } from './server/server-add/server-add.component';
 import { ServerOverdueComponent } from './server/server-overdue/server-overdue.component';
 import { ServerListComponent } from './server/server-list/server-list.component';
 import { FooterComponent } from './footer/footer.component';
+import { ServerService } from './server/server.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [ServerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

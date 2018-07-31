@@ -1,1 +1,25 @@
-<button class='btn btn-primary'>Add a Server</button>
+<button class='btn btn-primary' type="submit" (click)="onAddItem('',hostnameInput,ipInput,deadlineInput,statusInput,'')">Add a Server</button>
+<div class="row">
+  <div class="col-xs-12">
+    <form>
+      <div class="row">
+        <div class="col-sm-5 form-group">
+          <label for="hostname">hostname</label>
+          <input type="text" id='hostname' class='form-control' #hostnameInput>
+        </div>
+        <div class="col-sm-2 form-group">
+          <label for="ip">IP</label>
+          <input type="text" id='ip' class='form-control' #ipInput>
+        </div>
+        <div class="col-sm-2 form-group">
+          <label for="deadline">Deadline</label>
+          <input type="text" id='deadline' class='form-control' #deadlineInput>
+        </div>
+        <div class="col-sm-2 form-group">
+          <label for="status">Status</label>
+          <input type="text" id='status' class='form-control' #statusInput>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

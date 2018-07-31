@@ -11,12 +11,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Core</td>
-        <td>10.1.1.1</td>
-        <td>7/25/2018</td>
-        <td>Pending</td>
+      <tr *ngFor='let server of servers'>
+        <th scope="row">{{server.id}}</th>
+        <td>{{server.hostname}}</td>
+        <td>{{server.ip}}</td>
+        <td>{{server.deadline}}</td>
+        <td>{{server.status}}</td>
         <td>
           <button class='btn btn-danger'>Remove</button>
           <button class='btn btn-success'>Complete</button>
