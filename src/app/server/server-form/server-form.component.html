@@ -1,31 +1,36 @@
 <div class="container">
-<div class="row">
-  <div class="col-xs-12">
-    <form>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <label for="hostname">Hostname</label>
-          <input type="text" id='hostname' class='form-control' #hostnameInput>
+  <div class="row">
+    <div class="col-xs-12">
+      <form>
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <label for="hostname">Hostname</label>
+            <input type="text" id='hostname' maxlength="32" class='form-control' #hostnameInput>
+          </div>
+          <div class="col-sm-12 form-group">
+            <label for="ip">IP</label>
+            <input [pattern]="pattern" placeholder="100.100.100.100" type="text" id='ip' class='form-control' #ipInput>
+          </div>
+          <div class="col-sm-12 form-group">
+            <label for="deadline">Deadline</label>
+            <input type="date" id='deadline' class='form-control' #deadlineInput>
+          </div>
+          <div class="col-sm-12 form-group">
+            <label for="status">Status</label>
+            <select name="status" id="status" class='form-control' #statusInput>
+              <option value=""></option>
+              <option value="Pending">Pending</option>
+              <option value="Complete">Complete</option>
+              <option value="Removed">Remove</option>
+            </select>
+          </div>
+          <div class="col-sm-12 form-group">
+            <label for="description">Description</label>
+            <textarea name='description' placeholder="Enter in a description" rows="6" cols="100" class='form-control' #descriptionInput></textarea>
+          </div>
         </div>
-        <div class="col-sm-12 form-group">
-          <label for="ip">IP</label>
-          <input type="text" id='ip' class='form-control' #ipInput>
-        </div>
-        <div class="col-sm-12 form-group">
-          <label for="deadline">Deadline</label>
-          <input type="date" id='deadline' class='form-control' #deadlineInput>
-        </div>
-        <div class="col-sm-12 form-group">
-          <label for="status">Status</label>
-          <select name="status" id="status" class='form-control' #statusInput>
-            <option value="Pending">Pending</option>
-            <option value="Complete">Complete</option>
-            <option value="Removed">Remove</option>
-          </select>
-        </div>
-      </div>
-    </form>
-    <button class='btn btn-general' type="submit" (click)="onAddItem('',hostnameInput,ipInput,deadlineInput,statusInput,'')">Submit</button>
+      </form>
+      <button class='btn btn-general' type="submit" (click)="onAddItem('',hostnameInput,ipInput,deadlineInput,statusInput,'')">Submit</button>
+    </div>
   </div>
-</div>
 </div>
