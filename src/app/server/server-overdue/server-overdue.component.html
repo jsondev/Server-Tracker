@@ -2,10 +2,12 @@
   <div class="card-body">
     <h5 class="card-title">Overdue Servers</h5>
     <h6 class="card-subtitle mb-2 text-muted">Please Handle:</h6>
-    <ul *ngFor="let server of servers">
+    <ng-container *ngFor="let server of servers">
+    <ul *ngIf="server.deadline < today">
       <li>{{server.hostname}}</li>
       <li>{{server.ip}}</li>
       <li>{{calculateDate(server)}} days ago</li>
     </ul>
+  </ng-container>
   </div>
 </div>

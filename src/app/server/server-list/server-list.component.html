@@ -11,15 +11,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor='let server of servers'>
+      <tr data-toggle="tooltip" data-placement="top" title="{{server.description}}" *ngFor='let server of servers'>
         <th scope="row">{{server.id}}</th>
         <td>{{server.hostname}}</td>
         <td>{{server.ip}}</td>
         <td>{{server.deadline | date}}</td>
         <td>{{server.status}}</td>
         <td>
-          <button class='btn btn-danger' (click)="onRemove(server)">Remove</button>
-          <button class='btn btn-success'(click)="onComplete(server)">Complete</button>
+          <button class='btn btn-danger' data-toggle="tooltip" data-placement="top" title="Click here to remove this server" (click)="onRemove(server)">Remove</button>
+          <button class='btn btn-success' data-toggle="tooltip" data-placement="top" title="Click here to mark this server as complete" (click)="onComplete(server)">Complete</button>
         </td>
       </tr>
     </tbody>

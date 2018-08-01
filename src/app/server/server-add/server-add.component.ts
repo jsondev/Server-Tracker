@@ -13,7 +13,7 @@ export class ServerAddComponent implements OnInit {
   }
   onNewServer() {
     this.router.navigate(
-      ['new'], { relativeTo: this.route });
+      ['new']);
   }
 
 }
