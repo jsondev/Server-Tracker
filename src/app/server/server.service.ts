@@ -1,12 +1,12 @@
-import { Server } from './server.model';
-import { EventEmitter } from '../../../node_modules/@angular/core';
+import { Server } from '../shared/server.model';
+import { EventEmitter } from '@angular/core';
 
 
 export class ServerService {
     serversChanged = new EventEmitter<Server[]>();
     private servers: Server[] = [
-        new Server(1, "Core", "10.1.1.1", "7/25/2018", "Pending", ''),
-        new Server(2, "Core", "10.1.1.1", "7/25/2018", "Pending", '')
+        new Server(1, "Core", "10.1.1.1", new Date("8/1/2018"), "Pending"),
+        new Server(2, "Core", "10.1.1.1", new Date("7/25/2018"), "Pending")
     ];
     getServers() {
         return this.servers.slice();
@@ -17,6 +17,10 @@ export class ServerService {
     }
     addServers(servers: Server[]) {
         this.servers.push(...servers);
+        this.serversChanged.emit(this.servers.slice());
+    }
+    removeServer(server: Server){
+        this.servers.splice(0, 1);
         this.serversChanged.emit(this.servers.slice());
     }
 }

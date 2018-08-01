@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Server } from '../../shared/server.model';
-import { ServerService } from '../server.service';
+import { Server } from '../shared/server.model';
+import { ServerService } from '../server/server.service';
 
 @Component({
-  selector: 'app-server-list',
-  templateUrl: './server-list.component.html',
-  styleUrls: ['./server-list.component.css']
+  selector: 'app-overdue',
+  templateUrl: './overdue.component.html',
+  styleUrls: ['./overdue.component.css']
 })
-export class ServerListComponent implements OnInit {
+export class OverdueComponent implements OnInit {
+  today = Date.now();
   servers: Server[];
   constructor(private stService: ServerService) { }
 
@@ -19,14 +20,15 @@ export class ServerListComponent implements OnInit {
       }
     );
   }
-  onComplete(server){
-    return server.status = "Complete";
-  }
-  onRemove(data){
+  onRemove(data) {
     const index = this.servers.indexOf(data);
     if (index !== -1) {
       this.servers.splice(index, 1);
-  }        
+    }
 
   }
+  onComplete(server) {
+    return server.status = "Complete";
+  }
+
 }

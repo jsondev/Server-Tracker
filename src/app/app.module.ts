@@ -9,6 +9,9 @@ import { ServerOverdueComponent } from './server/server-overdue/server-overdue.c
 import { ServerListComponent } from './server/server-list/server-list.component';
 import { FooterComponent } from './footer/footer.component';
 import { ServerService } from './server/server.service';
+import { AppRoutingModule } from './app-router.module';
+import { ServerFormComponent } from './server/server-form/server-form.component';
+import { OverdueComponent } from './overdue/overdue.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +19,15 @@ import { ServerService } from './server/server.service';
     HeaderComponent,
     ServerComponent,
     ServerAddComponent,
+    ServerFormComponent,
     ServerOverdueComponent,
     ServerListComponent,
-    FooterComponent
+    FooterComponent,
+    OverdueComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [ServerService],
   bootstrap: [AppComponent]

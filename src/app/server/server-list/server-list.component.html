@@ -15,24 +15,12 @@
         <th scope="row">{{server.id}}</th>
         <td>{{server.hostname}}</td>
         <td>{{server.ip}}</td>
-        <td>{{server.deadline}}</td>
+        <td>{{server.deadline | date}}</td>
         <td>{{server.status}}</td>
         <td>
-          <button class='btn btn-danger'>Remove</button>
-          <button class='btn btn-success'>Complete</button>
+          <button class='btn btn-danger' (click)="onRemove(server)">Remove</button>
+          <button class='btn btn-success'(click)="onComplete(server)">Complete</button>
         </td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
       </tr>
     </tbody>
   </table>

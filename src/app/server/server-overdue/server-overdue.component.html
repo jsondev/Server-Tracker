@@ -2,7 +2,10 @@
   <div class="card-body">
     <h5 class="card-title">Overdue Servers</h5>
     <h6 class="card-subtitle mb-2 text-muted">Please Handle:</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <ul *ngFor="let server of servers">
+      <li>{{server.hostname}}</li>
+      <li>{{server.ip}}</li>
+      <li>{{calculateDate(server)}} days ago</li>
+    </ul>
   </div>
 </div>
